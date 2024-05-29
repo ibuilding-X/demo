@@ -1,0 +1,52 @@
+{
+	"deviceModels": [
+		{
+			"name": "switch",
+			"description": "开关",
+			"devicePoints": [
+				{
+					"name": "onOff",
+					"description": "开关状态",
+					"reportMode": "change",
+					"valueType": "int",
+					"readWrite": "RW",
+					"primaryTable": "HOLDING_REGISTER",
+					"startAddress": "40001d",
+					"rawType": "uint16"
+				}
+			],
+			"devices": [
+				{
+					"id": "switch-1",
+					"description": "开关-1",
+					"connectionKey": "dev/ttyUSB01",
+					"properties": {
+						"unitID": "1"
+					}
+				},
+				{
+					"id": "switch-2",
+					"description": "开关-2",
+					"connectionKey": "dev/ttyUSB01",
+					"properties": {
+						"unitID": "2"
+					}
+				}
+			]
+		}
+	],
+	"connections": {
+		"dev/ttyUSB01": {
+			"address": "dev/ttyUSB01",
+			"batchReadLen": 50,
+			"enable": true,
+			"minInterval": 500,
+			"mode": "rtu",
+			"parity": 0,
+			"stop_bits": 0,
+			"timeout": 5000,
+			"virtual": true
+		}
+	},
+	"protocolName": "modbus"
+}
